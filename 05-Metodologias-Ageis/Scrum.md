@@ -6,6 +6,8 @@
 - Reuniões rápidas diárias
 - Time auto-organizado
 
+* **MVP(Minimum Viable Product - Produto Mínimo Viável)** é a versão mais simples e funcional de um produto, lançada com o mínimo de recursos e tempo para validar uma ideia de negócio
+
 ---
 
 ## Papéis
@@ -44,3 +46,13 @@
 | Tela cadastro       | Tela login UI    | Validação formulário |             | Criar repositório  |
 | Sistema reset senha | Integração banco |                      |             |                    |
 | Dashboard usuário   |                  |                      |             |                    |
+
+
+## Burndown Chart
+É uma ferramenta visual que mostra o trabalho restante em um projeto contra o tempo disponível, geralmente uma Sprint. Ele utiliza dois eixos — trabalho (vertical) e tempo (horizontal) — para indicar se a equipe está no ritmo ideal para concluir as tarefas no prazo.
+
+![burndown](/05-Metodologias-Ageis/grafico.jpg)
+
+* Se a linha estiver abaixo da ideal: **Adiantamento**
+* Se a linha estiver acima da idela: **Atraso**
+* Se a linha estiver reta: **Sem progresso**
