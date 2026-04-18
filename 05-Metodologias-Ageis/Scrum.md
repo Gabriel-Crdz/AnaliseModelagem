@@ -54,5 +54,5 @@
 ![burndown](/05-Metodologias-Ageis/grafico.jpg)
 
 * Se a linha estiver abaixo da ideal: **Adiantamento**
-* Se a linha estiver acima da idela: **Atraso**
+* Se a linha estiver acima da ideal: **Atraso**
 * Se a linha estiver reta: **Sem progresso**
