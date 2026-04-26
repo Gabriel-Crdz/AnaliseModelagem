@@ -5,7 +5,7 @@ Nesta primeira etapa você precisa apenas criar o ambiente no trello (ou qualque
 
 ### Quadro
 
-![quadro 01](/Atv-Avaliativa-I/quadro-01.png)
+![quadro 01](/Atv-Avaliativa-I/img/quadro-01.png)
 
 ## Mudança de Escopo (2026-04-15/16)
 
@@ -14,7 +14,7 @@ O cliente entrou em contato novamente e solicitou que o sistema também permita 
 
 ### Quadro
 
-![quadro 02](/Atv-Avaliativa-I/quadro-02.png)
+![quadro 02](/Atv-Avaliativa-I/img/quadro-02.png)
 
 ## Prioridade Alterada (2026-04-17/18)
 
@@ -23,18 +23,18 @@ O cliente informou que a funcionalidade mais importante agora é a geração de 
 
 ### Quadro (inicio da Sprint)
 
-![sprint 1](/Atv-Avaliativa-I/quadro-03-sprint.png)
+![sprint 1](/Atv-Avaliativa-I/img/quadro-03-sprint.png)
 
-![quadro 04](/Atv-Avaliativa-I/quadro-04.png)
+![quadro 04](/Atv-Avaliativa-I/img/quadro-04.png)
 
 ## Requisito Urgente (2026-04-19/20)
 
 ### Enunciado
 Surgiu uma necessidade urgente: o sistema deve permitir a **edição de resultados de partidas**, pois erros humanos podem ocorrer durante o registro.
 
-![quadro 05](/Atv-Avaliativa-I/quadro-05.png)
+![quadro 05](/Atv-Avaliativa-I/img/quadro-05.png)
 
-![quadro 06](/Atv-Avaliativa-I/quadro-06.png)
+![quadro 06](/Atv-Avaliativa-I/img/quadro-06.png)
 
 ## Problema de Equipe(2026-04-21/22)
 
@@ -43,4 +43,31 @@ Um dos membros da equipe ficou indisponível por tempo indeterminado.
 
 ### Quadro
 
-![quadro 07](/Atv-Avaliativa-I/quadro-07.png)
+![quadro 07](/Atv-Avaliativa-I/img/quadro-07.png)
+
+## Nova Regra de Negócio (2026-04-23/24)
+
+### Enunciado 
+Agora, algumas modalidades terão **fase de grupos e fase eliminatória** (ex: quartas, semifinais e final).
+
+### Quadro
+
+![quadro 08](/Atv-Avaliativa-I/img/quadro-08.png)
+
+## Feedback do Cliente (2026-04-25/26)
+
+### Enunciado 
+Após ver um protótipo, o cliente achou o **sistema “confuso”** e pediu uma interface mais simples e intuitiva.
+
+### Quadro
+
+![fim da sprint](/Atv-Avaliativa-I/img/quadro-09-fim-sprint-01.png)
+
+![burndown sprint 01](/Atv-Avaliativa-I/img/burndown-sprint-01.png)
+
+![sprint 02](/Atv-Avaliativa-I/img/quadro-10-sprint-02.png)
+
+![quadro 11](/Atv-Avaliativa-I/img/quadro-11.png)
+
+
+
