@@ -1,0 +1,52 @@
+@startuml clinica
+left to right direction
+
+'Declaração dos atores'
+actor "Paciente" as paciente
+actor "Recepcionista" as recepcionista
+actor "Medico" as medico
+actor "Sistema de cobrança" as sys
+
+rectangle "Saude Total"{
+  usecase "Agendar consulta" as agendarCon
+  usecase "Cancelar consulta" as cancelarCon
+  usecase "Pagar consulta" as pagarCon
+  
+  usecase "Cadastrar paciente" as cadastrarPct
+  usecase "Confirmar presença" as confirmarPre
+  usecase "Gerar relatorios" as gerarRel
+  
+  usecase "Consultar historico" as consultarHst
+  usecase "Registrar atendimento" as registrarAtd
+  usecase "Emitir receita" as emitirRc
+  
+  usecase "Processar pagamento" as processarPag
+}
+
+'Associações do Paciente'
+paciente -- agendarCon
+paciente -- cancelarCon
+paciente -- pagarCon
+
+'Associações da recepcionista'
+recepcionista -- agendarCon
+recepcionista -- cancelarCon
+recepcionista -- cadastrarPct
+recepcionista -- confirmarPre
+recepcionista -- gerarRel
+
+'Associações do medico'
+medico -up- registrarAtd
+
+'Associações do sistema'
+sys -up- processarPag
+
+'Dependências: extends'
+emitirRc .down.> registrarAtd : <<extends>>
+consultarHst .down.> registrarAtd : <<extends>>
+
+
+'Dependências: include'
+pagarCon ..> processarPag : <<include>>
+
+@enduml

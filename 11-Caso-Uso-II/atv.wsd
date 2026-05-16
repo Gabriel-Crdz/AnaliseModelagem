@@ -1,0 +1,49 @@
+@startuml
+left to right direction
+
+actor "Academico" as acad
+actor "Estudante" as est
+actor "Professor" as prof
+
+rectangle "SmartBiblio"{
+  usecase "Buscar livros" as buscarLivros
+  usecase "Registrar retirada" as regRetirada
+  usecase "Devolver livros" as devolverLivros
+  usecase "Quitar valores pendentes" as quitarValores
+  usecase "Entrar na fila de espera" as entrarEspera
+  
+  usecase "Agendar cabine" as agendarCabine
+  usecase "Indicar livros" as indicarLivros
+  
+  usecase "Comprovar Matricula" as comprovarMatricula
+  usecase "Vasculhar historico" as vasculharHistorico
+  usecase "Alertar diretoria sobre custo" as alertarDiretoria
+  usecase "Suspender conta" as suspenderConta
+  usecase "Imprimir Comprovante" as imprimirComprovante
+}
+
+est ..|> acad 
+prof ..|> acad 
+
+acad -- buscarLivros
+acad -- regRetirada
+acad -- devolverLivros
+
+est -- agendarCabine
+prof -- indicarLivros
+mec -- comprovarMatricula
+
+quitarValores .up.> devolverLivros : <<extends>>
+entrarEspera .up.> buscarLivros: <<extends>>
+alertarDiretoria .up.> indicarLivros : <<extends>>
+imprimirComprovante .up.> regRetirada : <<extends>>
+imprimirComprovante .up.> quitarValores :<<extends>>
+suspenderConta .up.> vasculharHistorico : <<extends>>
+
+
+regRetirada ..> comprovarMatricula : <<include>>
+indicarLivros ..> comprovarMatricula : <<include>>
+agendarCabine ..> comprovarMatricula : <<include>>
+agendarCabine ..> vasculharHistorico : : <<include>>
+
+@enduml

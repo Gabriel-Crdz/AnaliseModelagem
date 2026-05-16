@@ -1,0 +1,31 @@
+@startuml base
+
+'Declaração dos atores'
+actor "Usuario" as usr
+actor "Aluno" as al
+actor "Professor" as prof
+
+'Declaração do Sistema'
+rectangle "Sistema de Biblioteca"{
+
+'Declaração de casos de uso'
+    usecase "Retirar Livro" as retirar
+    usecase "Cadastrar usuario" as cadastrar
+    usecase "Efetuar login" as login
+}
+
+'Dependência: ..>'
+cadastrar .right.> retirar : <<extends>>
+retirar .right.> login : <<include>>
+
+'Heranças'
+
+al -down-|> usr
+prof -down-|> usr
+
+'Associação Simples: --'
+usr -- retirar
+usr -- cadastrar
+usr -- login
+
+@enduml
