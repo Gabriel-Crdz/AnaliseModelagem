@@ -1,9 +1,13 @@
-@startuml
+@startuml exercicio
 left to right direction
 
 actor "Academico" as acad
 actor "Estudante" as est
 actor "Professor" as prof
+actor "Portal MEC" as mec
+
+est --|> acad
+prof --|> acad 
 
 rectangle "SmartBiblio"{
   usecase "Buscar livros" as buscarLivros
@@ -18,12 +22,9 @@ rectangle "SmartBiblio"{
   usecase "Comprovar Matricula" as comprovarMatricula
   usecase "Vasculhar historico" as vasculharHistorico
   usecase "Alertar diretoria sobre custo" as alertarDiretoria
-  usecase "Suspender conta" as suspenderConta
   usecase "Imprimir Comprovante" as imprimirComprovante
+  usecase "Suspender conta" as suspenderConta
 }
-
-est ..|> acad 
-prof ..|> acad 
 
 acad -- buscarLivros
 acad -- regRetirada
@@ -31,19 +32,22 @@ acad -- devolverLivros
 
 est -- agendarCabine
 prof -- indicarLivros
-mec -- comprovarMatricula
+mec -up- comprovarMatricula
 
-quitarValores .up.> devolverLivros : <<extends>>
-entrarEspera .up.> buscarLivros: <<extends>>
-alertarDiretoria .up.> indicarLivros : <<extends>>
-imprimirComprovante .up.> regRetirada : <<extends>>
-imprimirComprovante .up.> quitarValores :<<extends>>
-suspenderConta .up.> vasculharHistorico : <<extends>>
-
-
+'Dependências: include'
 regRetirada ..> comprovarMatricula : <<include>>
-indicarLivros ..> comprovarMatricula : <<include>>
 agendarCabine ..> comprovarMatricula : <<include>>
-agendarCabine ..> vasculharHistorico : : <<include>>
+indicarLivros ..> comprovarMatricula : <<include>>
+regRetirada .right.> vasculharHistorico : <<include>>
+agendarCabine .right.> vasculharHistorico : <<include>>
+
+'Dependências: extends'
+entrarEspera .up.> buscarLivros: <<extends>>
+quitarValores .up.> devolverLivros : <<extends>>
+alertarDiretoria .up.> indicarLivros : <<extends>>
+suspenderConta .up.> vasculharHistorico : <<extends>>
+imprimirComprovante .up.> quitarValores :<<extends>>
+imprimirComprovante .up.> regRetirada : <<extends>>
 
 @enduml
+

@@ -45,7 +45,6 @@ sys -up- processarPag
 emitirRc .down.> registrarAtd : <<extends>>
 consultarHst .down.> registrarAtd : <<extends>>
 
-
 'Dependências: include'
 pagarCon ..> processarPag : <<include>>
 

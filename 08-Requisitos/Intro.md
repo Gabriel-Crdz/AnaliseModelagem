@@ -74,6 +74,7 @@ Não necessariamente mensurável com números, mas precisa ser sem ambiguidade
 
 ### TORNANDO REQUISITOS MELHORES 
 Transforme os requisitos abaixo em versões boas e mensuráveis:
+
 **O sistema deve ser rápido:**
 * O sistema deve responder às requisições de busca em até 3 segundos para 95% das requisições simultânea de até 100 usuários 
 

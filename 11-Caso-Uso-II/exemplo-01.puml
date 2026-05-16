@@ -1,9 +1,13 @@
-@startuml base
+@startuml Biblioteca
 
 'Declaração dos atores'
 actor "Usuario" as usr
 actor "Aluno" as al
 actor "Professor" as prof
+
+'Heranças'
+al -down-|> usr
+prof -down-|> usr
 
 'Declaração do Sistema'
 rectangle "Sistema de Biblioteca"{
@@ -14,18 +18,13 @@ rectangle "Sistema de Biblioteca"{
     usecase "Efetuar login" as login
 }
 
-'Dependência: ..>'
-cadastrar .right.> retirar : <<extends>>
-retirar .right.> login : <<include>>
-
-'Heranças'
-
-al -down-|> usr
-prof -down-|> usr
-
 'Associação Simples: --'
 usr -- retirar
 usr -- cadastrar
 usr -- login
+
+'Dependência: ..>'
+cadastrar .right.> retirar : <<extends>>
+retirar .right.> login : <<include>>
 
 @enduml
