@@ -1,0 +1,32 @@
+@startuml
+left to right direction
+
+actor Usuario
+actor "Aluno" as Aluno
+actor "Professor" as Professor
+actor "Funcionario Biblioteca" as Funcionario
+actor "Bibliotecario" as Bibliotecario
+actor "Administrador" as Admin
+actor "Sistema Academico" as SA
+actor "Gateway de Pagamento" as GP
+
+rectangle "Sistema Biblioteca Inteligente" {
+    usecase "Autenticar Usuario" as UC1
+    usecase "Consultar Acervo" as UC2
+    usecase "Realizar Emprestimo" as UC3
+    usecase "Validar Pendencias" as UC4
+    usecase "Verificar Disponibilidade" as UC5
+    usecase "Renovar Emprestimo" as UC6
+    usecase "Solicitar Renovacao\nExtraordinaria" as UC7
+    usecase "Reservar Material" as UC8
+    usecase "Notificar Reserva\nDisponivel" as UC9
+    usecase "Calcular Multa" as UC10
+    usecase "Efetuar Pagamento" as UC11
+    usecase "Reservar Sala" as UC12
+    usecase "Solicitar Aprovacao\nEspecial" as UC13
+    usecase "Acessar Conteudo\nDigital" as UC14
+    usecase "Autorizar Conteudo\nPremium" as UC15
+    usecase "Emitir Relatorios" as UC16
+}
+
+@enduml

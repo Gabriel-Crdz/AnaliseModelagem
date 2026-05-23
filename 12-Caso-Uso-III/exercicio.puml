@@ -1,0 +1,68 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+skinparam actorStyle awesome
+
+actor Usuario
+actor "Aluno" as Aluno
+actor "Professor" as Professor
+actor "Funcionario Biblioteca" as Funcionario
+actor "Bibliotecario" as Bibliotecario
+actor "Administrador" as Admin
+actor "Sistema Academico" as SA
+actor "Gateway de Pagamento" as GP
+
+Aluno --|> Usuario
+Professor --|> Usuario
+Funcionario --|> Usuario
+Bibliotecario --|> Funcionario
+Admin --|> Funcionario
+
+rectangle "Sistema Biblioteca Inteligente" {
+
+usecase "Autenticar Usuario" as UC1
+usecase "Consultar Acervo" as UC2
+usecase "Realizar Emprestimo" as UC3
+usecase "Validar Pendencias" as UC4
+usecase "Verificar Disponibilidade" as UC5
+usecase "Renovar Emprestimo" as UC6
+usecase "Solicitar Renovacao\nExtraordinaria" as UC7
+usecase "Reservar Material" as UC8
+usecase "Notificar Reserva\nDisponivel" as UC9
+usecase "Calcular Multa" as UC10
+usecase "Efetuar Pagamento" as UC11
+usecase "Reservar Sala" as UC12
+usecase "Solicitar Aprovacao\nEspecial" as UC13
+usecase "Acessar Conteudo\nDigital" as UC14
+usecase "Autorizar Conteudo\nPremium" as UC15
+usecase "Emitir Relatorios" as UC16
+
+Usuario --> UC1
+Usuario --> UC2
+Usuario --> UC3
+Usuario --> UC6
+Usuario --> UC8
+Usuario --> UC12
+Usuario --> UC14
+
+Funcionario --> UC16
+Bibliotecario --> UC13
+Admin --> UC15
+
+SA --> UC1
+GP --> UC11
+
+UC3 .> UC4 : <<include>>
+UC3 .> UC5 : <<include>>
+UC6 .> UC4 : <<include>>
+UC8 .> UC9 : <<include>>
+UC11 .> UC10 : <<include>>
+
+UC7 .> UC6 : <<extend>>
+UC13 .> UC3 : <<extend>>
+UC15 .> UC14 : <<extend>>
+
+UC10 .> UC3 : <<extend>>
+
+}
+@enduml
