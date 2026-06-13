@@ -1,0 +1,70 @@
+@startuml
+
+interface Autenticavel{
+  + autenticar(email: String, senha: String): boolean
+}
+
+abstract class Usuario{
+    - id: int
+    # nome: String
+    + email: String
+    # senho: String
+}
+
+class Cliente{
+    - cpf: String
+    + autenticar(email: String, senha: String): boolean
+    + comprar(void): void
+}
+
+class Produto{
+    - id: int
+    - descricao: String
+    - preco: Double
+    - qtde: int
+
+    + alterarPreco(valor: Double): void
+}
+
+class MailService{
+    - id: int
+
+    + enviarEmail(void): boolean
+}
+
+class Venda{
+    - id: int
+    - valorTotal: Double
+
+    + adicionarItem(item : itemVenda): void
+    + calculaTotal(void): Double
+    + enviarEmail(email: mailService): void
+}
+
+class ItemVenda{
+    - id: int
+    - qtde: int
+    - precoUnitario: Double
+
+    + calcularSubtotal(void): double
+}
+
+'Herança'
+Cliente --|> Usuario
+
+'Implementação'
+Cliente ..|> Autenticavel
+
+'Associação Simples'
+Cliente "1" -- "*" Venda: realiza
+
+'Composição'
+Venda "1" *-- "*" ItemVenda: possui
+
+'Agregação'
+Venda "1" o-- "*" Produto: utiliza
+
+'Dependencia'
+Venda ..> MailService: usa
+
+@enduml

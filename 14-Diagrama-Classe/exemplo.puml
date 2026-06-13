@@ -1,0 +1,40 @@
+
+'Declaração de uma intetrface'
+interface Clicavel{
+  + AoClicar(e: Evento): acao
+}
+
+'Declaração de uma classe abstrata'
+abstract class Veiculo{
+  - Id: int
+  # modelo: String
+  # marca: String
+  + fabricacao: Date
+  
+  + calcularIdade(fabricacao : Date): int 
+}
+
+' Declaração de uma classe'
+class Automovel{
+  - Placa: String
+  
+  + abastecer(c : Combustivel): void
+}
+
+
+'Associações'
+
+'Herança'
+Automovel -up-|> Veiculo
+
+'Agrecação'
+Automovel "1..*" o-- "0..*" Motorista: dirige 
+
+
+'Composição'
+Automovel  *--  Pecas  
+
+
+'Implementação'
+Motorista ..|> Clicavel
+
