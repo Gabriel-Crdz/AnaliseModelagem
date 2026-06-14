@@ -1,4 +1,4 @@
-
+@startuml exemplos
 'Declaração de uma intetrface'
 interface Clicavel{
   + AoClicar(e: Evento): acao
@@ -21,7 +21,6 @@ class Automovel{
   + abastecer(c : Combustivel): void
 }
 
-
 'Associações'
 
 'Herança'
@@ -30,11 +29,10 @@ Automovel -up-|> Veiculo
 'Agrecação'
 Automovel "1..*" o-- "0..*" Motorista: dirige 
 
-
 'Composição'
 Automovel  *--  Pecas  
-
 
 'Implementação'
 Motorista ..|> Clicavel
 
+@enduml
