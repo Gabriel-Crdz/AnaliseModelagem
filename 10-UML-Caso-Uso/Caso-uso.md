@@ -82,7 +82,7 @@ O mais comum é a associação: linha ligando ator ao caso de uso.
 
 Além da associação simples entre ator e caso de uso, existem relacionamentos especiais muito importantes:
 
-### <<include>>                                                                                    
+### \<\<include\>\>                                                                                    
 
 **Significa:** um caso de uso **SEMPRE** reutiliza outro.
 
@@ -99,7 +99,7 @@ Serve para:
     * Para finalizar compra, SEMPRE é necessário:
         - Autenticar Usuário
 
-### <<extend>>
+### \<\<extend\>\>
 
 **Significa:** um comportamento opcional ou condicional.
 
