@@ -1,0 +1,132 @@
+@startuml Copa
+left to right direction
+
+abstract class Usuario{
+  - id: int
+  # nome: String
+  # email: String
+  # senha: String
+  # telefone: String
+
+  + login(email: String, senha: String): boolean
+  + logout(void): void
+  + alterarSenha(senha: String): boolean
+}
+
+class Jogador{
+  - numCamisa: int
+  - posicao: String
+  - numGols: int
+  - numAssist: int
+  - dataNasc: Date
+
+  + marcarGol(gol: int): void
+  + darAssistencia(assist: int): void
+  + atualizarEstatisticas(void): void
+}
+
+class Tecnico{
+  - anosExperiencia: int
+  - nacionalidade: String
+  - formacao: String
+  - esquemaTatico: String
+  - vitorias: int
+
+  + escalarTime(void): void
+  + alterarTatica(void): void
+  + convocarJogador(jogador: String): void
+}
+
+class Estatistica{
+  - id: int
+
+  - posseBolaSelecaoA: double
+  - posseBolaSelecaoB: double
+
+  - finalizacoesSelecaoA: int
+  - finalizacoesSelecaoB: int
+
+  - cartoesSelecaoA: int
+  - cartoesSelecaoB: int
+
+  - faltasSelecaoA: int
+  - faltasSelecaoB: int
+
+  + atualzarPosse(void): void
+  + registrarCartao(selecao: Selecao): void
+  + registrarFalta(selecao: Selecao): void
+  + gerarResumo(void): String
+}
+
+
+class Selecao{
+  - id: int
+  - nome: String
+  - sigla: String
+  - pais: String
+  - cidadeBase: String
+  - rankInter: int
+  - continente: String
+
+  + convocarJogador(void): void
+  + calcularMediaRanking(void): double
+  + listarJogadores(void): void
+}
+
+class Estadio{
+  - id: int
+  - nome: String
+  - cidade: String
+  - capacidade: int
+  - dataInauguracao: Date
+  - tipoGramado: String
+
+  + receberPartida(void): void
+  + calcularLotacao(void): double
+  + exibirInformacoes(void): String
+}
+
+class Partida{
+  - id: int
+  - nome: String
+  - data: Date
+  - horario: Time
+  - fase: String
+  - golsSelecaoA: int
+  - golsSelecaoB: int
+  - duracao: int
+
+  + iniciarPartida(void): void
+  + finalizarPartida(void): void
+  + gerarRelatorio(void): String
+}
+
+class Grupo{
+  - id: int
+  - nome: String
+  - pontuacaoMax: int
+  - quantidadeSelecoes: int
+  - classificados: int
+
+  + adicionarSelecao(void): void
+  + calcularClassificacao(void): void
+  + listarSelecoes(void): void
+}
+
+Jogador --|> Usuario
+Tecnico --|> Usuario
+
+Grupo "1" o-- "*" Selecao : possui
+
+Selecao "1" *-- "*" Jogador : possui
+Selecao "1" *-- "1" Tecnico : é treinada por
+
+Partida "1" o-- "2" Selecao : é disputada por
+
+Partida "1" --> "1" Estadio : acontece em
+
+Jogador "*" -- "*" Partida : participa de
+
+Partida "1" *-- "1" Estatistica : gera
+
+@enduml
